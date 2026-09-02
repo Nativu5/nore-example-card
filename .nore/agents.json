@@ -1,0 +1,32 @@
+{
+  "agents": {
+    "director": {
+      "prompt": "agents/director/prompt.md",
+      "tools": [
+        "builtin.read_story",
+        "builtin.read_asset",
+        "builtin.accept_draft",
+        "card.mood-note.write"
+      ]
+    },
+    "narrator": {
+      "prompt": "agents/narrator/prompt.md",
+      "tools": []
+    },
+    "plot-reviewer": {
+      "prompt": "agents/plot-reviewer/prompt.md",
+      "tools": [
+        "builtin.read_story",
+        "builtin.read_draft"
+      ]
+    },
+    "memory-projector": {
+      "prompt": "agents/memory-projector/prompt.md",
+      "tools": [
+        "builtin.read_story",
+        "builtin.read_asset",
+        "builtin.write_asset"
+      ]
+    }
+  }
+}

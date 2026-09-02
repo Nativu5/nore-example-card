@@ -1,0 +1,10 @@
+{
+  "director": "director",
+  "narrator": "narrator",
+  "reviewers": [
+    "plot-reviewer"
+  ],
+  "projectors": [
+    "memory-projector"
+  ]
+}

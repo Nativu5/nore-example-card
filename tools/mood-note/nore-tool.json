@@ -1,0 +1,16 @@
+{
+  "id": "mood-note",
+  "title": "Mood Note Tool",
+  "sdk": "nore-tool-sdk",
+  "runtime": "node",
+  "entrypoint": "src/index.ts",
+  "capabilities": {
+    "write": {
+      "export": "writeMoodNote",
+      "permissions": [
+        "assets:read",
+        "assets:write"
+      ]
+    }
+  }
+}

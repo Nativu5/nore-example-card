@@ -1,0 +1,11 @@
+{
+  "tools": {
+    "mood-note": {
+      "source": {
+        "type": "path",
+        "path": "tools/mood-note"
+      },
+      "enabled": true
+    }
+  }
+}

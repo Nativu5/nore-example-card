@@ -1,0 +1,14 @@
+{
+  "assets": {
+    "setting-guide": {
+      "path": "assets/setting-guide.md",
+      "mediaType": "text/markdown",
+      "scope": "card"
+    },
+    "opening-state": {
+      "path": "assets/opening-state.json",
+      "mediaType": "application/json",
+      "scope": "branch"
+    }
+  }
+}
