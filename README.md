@@ -20,11 +20,28 @@ The layout keeps framework metadata separate from creator-authored content:
 ```text
 .nore/        Nore metadata and registries
 agents/       Agent definitions and prompts
-tools/        Self-contained Card Tool packages
+tools/        Card Tool packages
 assets/       Card and Branch assets
 body.txt      The Story Body accumulated up to this commit
 draft/        Runtime draft files
+package.json  The Card as an npm project: module type, and dependencies if any
 ```
+
+## Card Tools
+
+`tools/mood-note/` is a Card Tool Package; see its own README for the shape the
+code has to take. Two things about it belong here rather than there, because they
+are properties of the Card and not of the package:
+
+- **Dependencies are declared once for the whole Card**, in the root
+  `package.json`, with its lockfile committed beside it. One Story has one
+  `node_modules`, so two packages cannot each bring their own. This Card has no
+  dependencies, so it has no lockfile and Nore never runs an install for it; the
+  root `package.json` is here for `"type": "module"`, which is what makes the
+  package's `index.js` an ES module.
+- **A Card Tool runs in the Harness process with the Harness's privileges.**
+  Enabling one is a trust decision about this whole Card, not a capability list
+  per Tool.
 
 A Nore runtime can start a new Story from any chosen branch head, then create
 its own runtime Story Branch such as:
