@@ -10,9 +10,9 @@ inputs:
     required: true
     description: >-
       What this Body must contain — the player's intent, any length or
-      point-of-view constraint, and threads to pick up. Send `player` instead of
-      `text` to pass the player's own words through verbatim, which costs you no
-      output tokens.
+      point-of-view constraint, and threads to pick up. Send
+      `use_player_raw_input: true` instead of `text` to pass the player's own
+      words through verbatim, which costs you no output tokens.
   story:
     kind: story
     description: >-
