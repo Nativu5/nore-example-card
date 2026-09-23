@@ -22,12 +22,12 @@ inputs:
   state:
     kind: asset
     description: >-
-      The opening-state Asset (`asset:branch:opening-state`). Only its location
+      The opening-state Asset (`asset:opening-state`). Only its location
       and mood reach the prompt; do not read it and paste fields yourself.
   lore:
     kind: assets
     description: >-
-      Setting Assets to write from, `asset:card:setting-guide` among them. Pass
+      Setting Assets to write from, `asset:setting-guide` among them. Pass
       only the ones this Body actually needs.
 ---
 
