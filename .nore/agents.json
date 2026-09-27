@@ -3,30 +3,17 @@
     "director": {
       "prompt": "agents/director/prompt.md",
       "tools": [
-        "builtin.read_story",
-        "builtin.read_asset",
-        "builtin.accept_draft",
         "card.mood-note.write"
       ]
     },
     "narrator": {
-      "prompt": "agents/narrator/prompt.md",
-      "tools": []
+      "prompt": "agents/narrator/prompt.md"
     },
     "plot-reviewer": {
-      "prompt": "agents/plot-reviewer/prompt.md",
-      "tools": [
-        "builtin.read_story",
-        "builtin.read_draft"
-      ]
+      "prompt": "agents/plot-reviewer/prompt.md"
     },
     "memory-projector": {
-      "prompt": "agents/memory-projector/prompt.md",
-      "tools": [
-        "builtin.read_story",
-        "builtin.read_asset",
-        "builtin.write_asset"
-      ]
+      "prompt": "agents/memory-projector/prompt.md"
     }
   }
 }
