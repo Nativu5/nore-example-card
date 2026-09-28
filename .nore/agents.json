@@ -1,19 +1,21 @@
 {
-  "agents": {
-    "director": {
-      "prompt": "agents/director/prompt.md",
-      "tools": [
-        "card.mood-note.write"
-      ]
-    },
-    "narrator": {
-      "prompt": "agents/narrator/prompt.md"
-    },
-    "plot-reviewer": {
-      "prompt": "agents/plot-reviewer/prompt.md"
-    },
-    "memory-projector": {
-      "prompt": "agents/memory-projector/prompt.md"
-    }
+  "director": {
+    "role": "director",
+    "prompt": "agents/director/prompt.md",
+    "tools": [
+      "card.mood-note.write"
+    ]
+  },
+  "narrator": {
+    "role": "narrator",
+    "prompt": "agents/narrator/prompt.md"
+  },
+  "plot-reviewer": {
+    "role": "reviewer",
+    "prompt": "agents/plot-reviewer/prompt.md"
+  },
+  "memory-projector": {
+    "role": "projector",
+    "prompt": "agents/memory-projector/prompt.md"
   }
 }

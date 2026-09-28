@@ -1,8 +1,5 @@
 {
-  "tools": {
-    "mood-note": {
-      "path": "tools/mood-note",
-      "enabled": true
-    }
+  "mood-note": {
+    "path": "tools/mood-note"
   }
 }
