@@ -12,10 +12,12 @@
   },
   "plot-reviewer": {
     "role": "reviewer",
-    "prompt": "agents/plot-reviewer/prompt.md"
+    "prompt": "agents/plot-reviewer/prompt.md",
+    "body": true
   },
   "memory-projector": {
     "role": "projector",
-    "prompt": "agents/memory-projector/prompt.md"
+    "prompt": "agents/memory-projector/prompt.md",
+    "body": true
   }
 }
