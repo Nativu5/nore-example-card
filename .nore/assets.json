@@ -1,13 +1,11 @@
 {
-  "assets": {
-    "setting-guide": {
-      "path": "assets/setting-guide.md",
-      "mediaType": "text/markdown",
-      "readOnly": true
-    },
-    "opening-state": {
-      "path": "assets/opening-state.json",
-      "mediaType": "application/json"
-    }
+  "setting-guide": {
+    "path": "assets/setting-guide.md",
+    "mediaType": "text/markdown",
+    "readOnly": true
+  },
+  "opening-state": {
+    "path": "assets/opening-state.json",
+    "mediaType": "application/json"
   }
 }
