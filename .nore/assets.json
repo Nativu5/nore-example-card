@@ -2,10 +2,17 @@
   "setting-guide": {
     "path": "assets/setting-guide.md",
     "mediaType": "text/markdown",
-    "readOnly": true
+    "readOnly": true,
+    "description": "The world's tone, and how magic shows itself",
+    "keywords": [
+      "world",
+      "magic",
+      "世界观"
+    ]
   },
   "opening-state": {
     "path": "assets/opening-state.json",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "description": "Where Mara is and how the scene feels"
   }
 }

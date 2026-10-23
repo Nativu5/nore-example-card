@@ -16,19 +16,20 @@ inputs:
   story:
     kind: story
     description: >-
-      The accepted story so far, by reference. `tail` gives the closing Bodies,
-      `full` the whole path, `range` with from/to a specific stretch. Never
-      retype the story into `brief`.
+      The accepted story so far, as a target: `story://tail` for the latest
+      Bodies that fit, `story://3-7` for a stretch, `story://all` for the whole
+      path. Never retype the story into `brief`.
   state:
     kind: asset
     description: >-
-      The opening-state Asset (`asset:opening-state`). Only its location
+      The opening-state Asset, `asset://opening-state`. Only its location
       and mood reach the prompt; do not read it and paste fields yourself.
   lore:
     kind: assets
     description: >-
-      Setting Assets to write from, `asset:setting-guide` among them. Pass
-      only the ones this Body actually needs.
+      Setting Assets to write from, `asset://setting-guide` among them, or
+      single paragraphs of one (`asset://<key>#2`). Pass only what this Body
+      actually needs.
 ---
 
 # Narrator

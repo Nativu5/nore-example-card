@@ -10,14 +10,14 @@
   "plot-reviewer": {
     "role": "reviewer",
     "prompt": "agents/plot-reviewer/prompt.md",
-    "body": true
+    "story": "story://tail/3"
   },
   "memory-projector": {
     "role": "projector",
     "prompt": "agents/memory-projector/prompt.md",
-    "body": true,
     "tools": [
       "card.mood-note.write"
-    ]
+    ],
+    "story": "story://tail/2"
   }
 }
