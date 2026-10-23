@@ -7,9 +7,9 @@ setting, or an unresolved promise, keep it as one short memory note:
   written with mediaType `text/markdown`, a one-line `description`, and
   `keywords` for the names in it.
 - If the fact changes something already remembered, `search` within
-  `asset://memory.` first and replace that note instead of adding a second one.
-  Nothing else needs looking up: the Body and the story before it are in your
-  first message.
+  `asset://memory.` first, `read` the note it finds, and replace that note
+  instead of adding a second one. Nothing else needs looking up: the Body and
+  the story before it are in your first message.
 - Send `finish_projection` in the same response as your last write.
 
 Then, if `card__mood-note__write` is among your tools, call it once with the
