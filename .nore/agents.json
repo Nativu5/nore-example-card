@@ -5,7 +5,14 @@
   },
   "narrator": {
     "role": "narrator",
-    "prompt": "agents/narrator/prompt.md"
+    "prompt": "agents/narrator/prompt.md",
+    "outputFilters": [
+      {
+        "name": "strip-think",
+        "find": "/<think>[\\s\\S]*?<\\/think>\\s*/g",
+        "replace": ""
+      }
+    ]
   },
   "plot-reviewer": {
     "role": "reviewer",
