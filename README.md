@@ -27,7 +27,6 @@ agents/       Agent definitions and prompts
 tools/        Card Tool packages
 assets/       Card and Branch assets
 body.txt      The Story Body accumulated up to this commit
-draft/        Runtime draft files
 package.json  The Card as an npm project: module type, and dependencies if any
 ```
 
