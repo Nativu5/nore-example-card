@@ -1,0 +1,5 @@
+{
+  "title": "Checks",
+  "version": "1.0.0",
+  "entrypoint": "index.js"
+}

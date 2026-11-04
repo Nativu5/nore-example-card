@@ -1,0 +1,24 @@
+{
+  "tool_result": [
+    {
+      "matcher": "generate_draft",
+      "handlers": [
+        {
+          "name": "strip-think",
+          "type": "code",
+          "package": "checks",
+          "export": "stripThink",
+          "description": "Takes a model's <think> block out of the prose.",
+          "required": true
+        },
+        {
+          "name": "plot-reviewer",
+          "type": "agent",
+          "prompt": "prompts/plot-reviewer.md",
+          "description": "Judges continuity and stakes, and fixes a wrong detail.",
+          "story": "story://tail/3"
+        }
+      ]
+    }
+  ]
+}

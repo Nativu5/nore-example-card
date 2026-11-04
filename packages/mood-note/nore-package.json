@@ -1,0 +1,5 @@
+{
+  "title": "Mood Note",
+  "version": "2.0.0",
+  "entrypoint": "index.js"
+}

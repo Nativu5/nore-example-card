@@ -1,9 +1,12 @@
 # Nore Example Card
 
-This repository is a small, author-facing Nore Character Card example.
+A small, author-facing Nore Character Card: Mara, a village well, and an empty
+lantern waiting for the first impossible light.
 
-It uses a normal non-bare Git repository. Every opening is an ordinary Git
-branch, and none of them is privileged:
+## Openings
+
+The Card is a normal non-bare Git repository, and every opening is an ordinary
+branch, none of them privileged:
 
 - `main` — the default opening
 - `rainy-door`
@@ -19,43 +22,49 @@ opening state, so all three share one Card definition: **change the Card on
 opening, so whatever prose history an opening branch carries becomes that
 Story's single starting Body, never a Body the Story wrote.
 
-The layout keeps framework metadata separate from creator-authored content:
+## What the Card declares
+
+A Card declares three things, in three files under `.nore/`:
+
+- **`director.json`** — the Director, the one session every Player input goes
+  to: its prompt, and which Tools it sees.
+- **`tools.json`** — the Tools a model decides to call:
+  - `generate_draft`, built into Nore, with this Card's Narrator template;
+  - `update_memory`, an **agent** Tool: a short session of its own, from
+    `prompts/update-memory.md`, that keeps memory notes on the latest Body;
+  - `record_mood`, a **code** Tool from `packages/mood-note`, given to
+    `update_memory` only -- given to the Director as well, every mood would be
+    recorded twice.
+- **`hooks.json`** — the handlers Nore runs on every Draft, in order, before it
+  becomes story Body:
+  - `strip-think`, **code** from `packages/checks`, takes a model's `<think>`
+    block out of the prose;
+  - `plot-reviewer`, an **agent** handler, accepts the Draft, fixes a wrong
+    detail, or rejects it with a reason the Director writes the next draft from.
+
+The Director never sees a Draft. A Draft that passes its handlers is written
+into the story in the same `generate_draft` call; a rejected one is not.
+Nobody reminds the Director to update memory, so its prompt says when.
 
 ```text
-.nore/        Nore metadata and registries
-agents/       Agent definitions and prompts
-tools/        Card Tool packages
-assets/       Card and Branch assets
-body.txt      The Story Body accumulated up to this commit
-package.json  The Card as an npm project: module type, and dependencies if any
+.nore/          format, card metadata, asset manifest, and the three declarations
+prompts/        the Director's, the Narrator's, the Reviewer's and the memory keeper's templates
+packages/       this Card's code (see packages/README.md)
+assets/         Card and Branch assets
+body.txt        the Story Body accumulated up to this commit
+package.json    the Card as an npm project: module type, and dependencies if any
 ```
 
-## Card Tools
+## Running it
 
-`tools/mood-note/` is a Card Tool Package; see its own README for the shape the
-code has to take. `.nore/agents.json` gives its one Tool to the memory
-projector, which records the mood each new Body ends on; a Player enables the
-package per Story, and may take the Tool away from that agent again. Two things
-about it belong here rather than there, because they are properties of the Card
-and not of the package:
+A Player turns code on per Story, in the Story's settings: every code entry
+starts off. `strip-think` is `required`, so a new Story opens only once it is on.
+Code runs in the Nore process with Nore's privileges; turning a package on is a
+trust decision about that package.
 
-- **Dependencies are declared once for the whole Card**, in the root
-  `package.json`, with its lockfile committed beside it. One Story has one
-  `node_modules`, so two packages cannot each bring their own. This Card has no
-  dependencies, so it has no lockfile and Nore never runs an install for it; the
-  root `package.json` is here for `"type": "module"`, which is what makes the
-  package's `index.js` an ES module.
-- **A Card Tool runs in the Harness process with the Harness's privileges.**
-  Enabling one is a trust decision about this whole Card, not a capability list
-  per Tool.
-
-A Nore runtime can start a new Story from any chosen branch head. The Story is
-a branch Nore creates in its own copy of this repository, named after the id
-Nore assigns it:
+A Story is a branch Nore creates in its own copy of this repository, named
+after the id Nore assigns it:
 
 ```text
 refs/heads/story/<story-id>
 ```
-
-The JSON files in `.nore/` intentionally stay small. They only use fields that
-are stable enough for this early example.

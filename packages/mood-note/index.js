@@ -1,21 +1,16 @@
 /**
- * One named export per Tool declared in `nore-tool.json`, and each export is a
- * factory: it takes the Tool context and returns a Pi `AgentTool`.
+ * `record_mood`: the export `.nore/tools.json` names for the Tool.  A factory
+ * that takes the Tool context and returns a Pi `AgentTool` -- minus its name,
+ * its description and whether it runs in parallel, which `tools.json` says, so
+ * a Player can read what this Card has without running its code.
  *
  * The context arrives as an argument rather than through an `import` because the
  * copy of the SDK a Card installs is a different module instance -- nothing in
  * the module system would tell it which Story, Branch or Turn it belongs to.
- *
- * `name` is deliberately absent: Nore builds the model-visible name from the
- * package key in `.nore/tools.json` and the Tool key in `nore-tool.json`, so
- * this Tool is addressed as `card.mood-note.write` and the model sees
- * `card__mood-note__write`.
  */
-export function writeMoodNote(ctx) {
+export function recordMood(ctx) {
   return {
-    label: "Write Mood Note",
-    description:
-      "Record how the Body just committed left Mara feeling, appended to the branch Asset `mood-note`.",
+    label: "Record Mood",
     parameters: {
       type: "object",
       properties: {
@@ -26,7 +21,7 @@ export function writeMoodNote(ctx) {
       additionalProperties: false,
     },
     async execute(toolCallId, params) {
-      // Read-then-write is ordinary programming here.  The Asset façade a Tool
+      // Read-then-write is ordinary programming here.  The Asset façade code
       // gets is addressed by Asset Key and has no "read it before you overwrite
       // it" advisory to satisfy: that guard exists because a model can decide to
       // overwrite something it never looked at, which is not a thing code does.
@@ -42,7 +37,7 @@ export function writeMoodNote(ctx) {
         mediaType: "application/json",
       });
       return {
-        content: [{ type: "text", text: `Mood note recorded: ${params.mood}. ${notes.length} so far.` }],
+        content: [{ type: "text", text: `Mood recorded: ${params.mood}. ${notes.length} so far.` }],
       };
     },
   };

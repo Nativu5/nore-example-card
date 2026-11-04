@@ -1,5 +1,18 @@
 {
-  "mood-note": {
-    "path": "tools/mood-note"
+  "generate_draft": {
+    "prompt": "prompts/narrator.md"
+  },
+  "update_memory": {
+    "type": "agent",
+    "prompt": "prompts/update-memory.md",
+    "description": "Keep this Card's memory notes current with the latest Body: durable facts about Mara, the setting, and unresolved promises. Call it once a Body is written.",
+    "tools": ["search", "read", "write", "delete", "record_mood"],
+    "story": "story://tail/2"
+  },
+  "record_mood": {
+    "type": "code",
+    "package": "mood-note",
+    "export": "recordMood",
+    "description": "Record the mood the latest Body ends on, and the detail in the prose that establishes it."
   }
 }
