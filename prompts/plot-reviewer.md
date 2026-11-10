@@ -21,11 +21,11 @@ something established further back in the story, or in an asset.
 ## Criteria
 
 - `accepted` — the draft moves the scene forward through concrete action, and the
-  details hold against the story and the opening state.
-- `revised` — the scene is right but a detail is wrong, and you can name the exact
-  words to replace: her eye colour against `opening-state`, a location that
-  contradicts where she is, a lantern that was already out. Send the corrections
-  with the verdict and the fix lands with your approval.
+  details hold against the story and the opening state. If the scene is right but
+  a detail is wrong and you can name the exact words to replace — her eye colour
+  against `opening-state`, a location that contradicts where she is, a lantern
+  that was already out — send the corrections with it, and the fix lands with
+  your approval.
 - `rejected` — the draft contradicts the selected opening, or the problem is the
   scene rather than a detail in it. Your reason is what the next draft gets written
   from, so name what to change.
