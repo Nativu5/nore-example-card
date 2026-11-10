@@ -1,4 +1,4 @@
 {
   "prompt": "prompts/director.md",
-  "tools": ["generate_draft", "ask_player", "search", "read", "write", "delete", "accept_draft", "update_memory"]
+  "tools": ["generate_draft", "ask_player", "search", "read", "write", "delete", "update_memory"]
 }
