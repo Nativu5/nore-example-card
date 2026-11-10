@@ -41,7 +41,8 @@ about the whole package, not about each export.
 
 `strip-think` is marked `required`: a Story will not open until the Player turns
 it on, because a Draft with the model's reasoning still in it must not reach the
-story. `record_mood` is not: without it the memory keeper just skips the mood.
+story. `record_mood` is a Tool, and a Tool cannot be `required`: without it the
+memory keeper just skips the mood.
 
 Dependencies are declared once for the whole Card, in the `package.json` at the
 Card root, because one Story has one `node_modules`. This Card has none, so it
